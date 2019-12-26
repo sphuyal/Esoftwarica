@@ -35,21 +35,13 @@ public class Homefragment extends Fragment {
     private RecyclerView recyclerView;
 
 
-
-
-
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         homemodel = ViewModelProviders.of(this).get(Homemodel.class);
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
 
         final TextView textView = view.findViewById(R.id.tvHome);
         homemodel.getText().observe(this, new Observer<String>() {

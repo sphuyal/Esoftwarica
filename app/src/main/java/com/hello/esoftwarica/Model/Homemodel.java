@@ -2,8 +2,9 @@ package com.hello.esoftwarica.Model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
-public class Homemodel {
+public class Homemodel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
