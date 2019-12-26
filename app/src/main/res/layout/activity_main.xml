@@ -7,16 +7,18 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/fContainer"
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/ButtonNavigation"/>
+        android:layout_above="@id/buttomNavigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/buttomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ButtonNavigation"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/buttom_navigation"/>
 
 
 </RelativeLayout>

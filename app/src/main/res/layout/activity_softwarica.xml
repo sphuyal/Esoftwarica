@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/colorWhite"
     android:layout_marginBottom="20dp"
-    tools:context=".Recycleview.SoftwaricaActivity">
+    tools:context=".Recycleview.">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

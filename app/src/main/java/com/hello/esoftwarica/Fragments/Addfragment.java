@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +17,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hello.esoftwarica.MainActivity;
 import com.hello.esoftwarica.Model.Addmodel;
 import com.hello.esoftwarica.R;
+import com.hello.esoftwarica.Recycleview.Softwarica;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Addfragment extends Fragment implements View.OnClickListener {
+public class Addfragment extends Fragment implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     private EditText etName,etAddress,etAge;
     private RadioGroup rgGender;
@@ -74,11 +77,44 @@ public class Addfragment extends Fragment implements View.OnClickListener {
             address = etAddress.getText().toString();
 
             if (validate()){
-
+                MainActivity.softwaricans.add(new Softwarica(name, gender,address, age));
+                Toast.makeText(getContext(), "Student Added", Toast.LENGTH_SHORT).show();
 
             }
 
         }
 
     }
+
+    private boolean validate(){
+        if (TextUtils.isEmpty(etName.getText())){
+            etName.setError("Enter your Full Name");
+            etName.requestFocus();
+            return false;
+        }else if (TextUtils.isEmpty(etAge.getText())){
+            etAge.setError("Enter your Age");
+            etAge.requestFocus();
+            return false;
+        }else if (TextUtils.isEmpty(etAddress.getText())){
+            etAddress.setError("Enter your Address");
+            etAddress.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        if (checkedId == R.id.rbMale) {
+            gender = "Male";
+        }
+        if (checkedId == R.id.rbFemale) {
+            gender = "Female";
+        }
+        if (checkedId == R.id.rbOthers) {
+            gender = "Others";
+        }
+
+    }
+
 }
