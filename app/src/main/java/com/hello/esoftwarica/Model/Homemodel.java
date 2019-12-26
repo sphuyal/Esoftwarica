@@ -1,5 +1,6 @@
 package com.hello.esoftwarica.Model;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 public class Homemodel {
@@ -9,5 +10,8 @@ public class Homemodel {
     public Homemodel(){
         mText = new MutableLiveData<>();
         mText.setValue("Home Fragment");
+    }
+    public LiveData<String> getText(){
+        return mText;
     }
 }
