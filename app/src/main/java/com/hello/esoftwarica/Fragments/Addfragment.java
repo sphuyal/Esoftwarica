@@ -74,7 +74,7 @@ public class Addfragment extends Fragment implements View.OnClickListener {
             address = etAddress.getText().toString();
 
             if (validate()){
-                MainActivity
+
 
             }
 
