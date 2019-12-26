@@ -17,9 +17,9 @@ import com.hello.esoftwarica.R;
 public class Homefragment extends Fragment {
 
 
-    public Homefragment() {
-        // Required empty public constructor
-    }
+
+
+
 
 
     @Override

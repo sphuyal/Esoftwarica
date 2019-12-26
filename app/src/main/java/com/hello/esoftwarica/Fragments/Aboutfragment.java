@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
+import com.hello.esoftwarica.Model.Aboutmodel;
 import com.hello.esoftwarica.R;
 
 /**
@@ -18,6 +20,7 @@ import com.hello.esoftwarica.R;
 public class Aboutfragment extends Fragment {
 
     private WebView webView;
+    private Aboutmodel aboutmodel;
 
 
 
@@ -30,7 +33,10 @@ public class Aboutfragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_about,container,false);
 
         webView = view.findViewById(R.id.webview);
-        webView = getSett
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://softwarica.edu.np/");
+        return view;
     }
 
 }
