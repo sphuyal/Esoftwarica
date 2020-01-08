@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (TextUtils.isEmpty(etUsername.getText()))
+                {
+                    etUsername.setError("Enter Username");
+                    return;
+                }
+                if (TextUtils.isEmpty(etPassword.getText()))
+                {
+                    etPassword.setError("Enter Password");
+                    return;
+                }
+
 
                 String username,password;
 

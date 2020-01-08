@@ -4,6 +4,7 @@ package com.hello.esoftwarica.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,23 +21,23 @@ import com.hello.esoftwarica.R;
 public class Aboutfragment extends Fragment {
 
     private WebView webView;
-    private Aboutmodel aboutmodel;
-
-
-
+    private Aboutmodel aboutModel;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
 
-        View view = inflater.inflate(R.layout.fragment_about,container,false);
+        aboutModel= ViewModelProviders.of(this).get(Aboutmodel.class);
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
 
-        webView = view.findViewById(R.id.webview);
+        webView=view.findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://softwarica.edu.np/");
         return view;
+
     }
 
 }

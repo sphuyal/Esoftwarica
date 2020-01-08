@@ -1,6 +1,7 @@
 package com.hello.esoftwarica.Recycleview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hello.esoftwarica.R;
+import com.hello.esoftwarica.UpdateActivity;
 
 import java.util.List;
 
@@ -62,8 +64,11 @@ public class SoftwaricaAdapter extends RecyclerView.Adapter<SoftwaricaAdapter.So
         holder.imgUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                Softwarica softwarica1 = softwaricaList.get(position);
+                int index = softwaricaList.indexOf(softwarica1);
+                UpdateActivity.index = index;
+                Intent intent = new Intent(mContext,UpdateActivity.class);
+                mContext.startActivity(intent);
             }
         });
 
